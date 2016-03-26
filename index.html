@@ -1,0 +1,252 @@
+<!doctype html>
+
+<!-- tu ne devrais pas lire ca, c'est du code sale -->
+
+<html lang="en">
+<head>
+
+	<!-- noindex!! we don't need to be found on google -->
+	<meta name="robots" content="noindex">
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Claire et Jérémy se marient !</title>
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!--
+        
+        Impress.js doesn't depend on any external stylesheets. It adds all of the styles it needs for the
+        presentation to work.
+        
+        This style below contains styles only for demo presentation. Browse it to see how impress.js
+        classes are used to style presentation steps, or how to apply fallback styles, but I don't want
+        you to use them directly in your presentation.
+        
+        Be creative, build your own. We don't really want all impress.js presentations to look the same,
+        do we?
+        
+        When creating your own presentation get rid of this file. Start from scratch, it's fun!
+        
+    -->
+    <link href="css/impress-demo.css" rel="stylesheet" />
+    
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/js.cookie.js"></script>
+	<script>
+	$(document).ready(function(){
+		if (Cookies.get('visited') != undefined)
+		{
+			// inserer page de "menu"
+			$("#impress").prepend($("#menu"));
+		}
+	    
+		impress().init();
+	    
+		Cookies.set('visited', 'yes');
+	}); 
+	</script>
+</head>
+
+
+<body class="impress-not-supported">
+
+<div id="menu" class='step hidden' data-x='-1000' data-y='0'>
+	<p style="font-size:larger"><b>Déjà venus ici?</b></p>
+
+	<p>Alors rendez-vous le <b>27 août 2016</b>,<br/>à <b>	15h</b> à la <b>mairie de Montbazens</b>,<br/> en Aveyron !</p>
+	<br/>
+	<p>Puis à la salle des fêtes de <br/><b>Capdenac-le-haut</b> pour la fiesta,<br/> à partir de 18h.</p>
+</div>
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Ton navigateur n'est pas capable d'afficher ce site correctement :(</p>
+    <p>Tu devrais utiliser la dernière version de <b>Chrome</b>, <b>Safari</b> ou <b>Firefox</b>.</p>
+</div>
+
+<div id="impress">
+	
+	<div id="claire" class="step hidden" data-x="0" data-y="0">
+		<div class="anim" id="claireanim"></div>
+		<p>Vous connaissez Claire Rouanet ?</p>
+    </div>
+	
+	<div id="jeremy" class="step hidden" data-x="1000" data-y="0">
+		<div class="anim" id="jeremyanim"></div>
+		<p>Vous connaissez Jérémy Laumon ?</p>
+		</div>
+	
+	<div id="marient" class="step hidden" data-x="1000" data-y="1000" data-scale="5">
+		<p>Eh bien, ils se marient !</p>
+		<div class="anim" id="coupleanim"></div>
+	</div>
+	
+<!-- 	<div id="photo-couple" class="step" data-x="0" data-y="1000" data-rotate="90">
+		<div class="anim" id="coupleanim"></div>
+	</div> -->
+	
+	<div id="comment" class="step hidden" data-x="1000" data-y="2000" data-scale="1" data-rotate="-90">
+		<p>Mais comment en est-on arrivé là ?</p>
+	</div>
+	
+	<div id="amsterdam" class="step hidden" data-x="2000" data-y="2000" data-scale="1" data-rotate="-90">
+		<p>Un voyage à Amsterdam...</p>
+		<img src="amsterdam.png"/>
+	</div>
+	
+	<div id="canal" class="step hidden" data-x="3000" data-y="2000" data-scale="1" data-rotate="-90">
+		<p>Un canal illuminé, une chemise, une jolie robe et un diamant...</p>
+		<img src="canal/canal.jpg"/>
+		<p>Jérémy fait (enfin!) sa demande !</p>
+	</div>
+	
+	<div id="moment" class="step hidden" data-x="2000" data-y="0000" data-scale="2">
+		<p>Une grosse fête arrive,</p>
+		<!-- <br/> -->
+		<p>et ils ont envie que vous en fassiez partie !</p>
+	</div>
+	
+	<div id="mairie" class="step hidden" data-x="4000" data-y="0">
+		<p>Alors rendez-vous le <b>27 août 2016</b>,<br/>à <b>	15h</b> à la <b>mairie de Montbazens</b>,<br/> en Aveyron !</p>
+		<br/>
+		<p>Puis à la salle des fêtes de <br/><b>Capdenac-le-haut</b> pour la fiesta,<br/> à partir de 18h.</p>
+	</div>
+	
+	<div id="map_france" class="step" data-x="4000" data-y="0" data-rotate-x="-90"
+		style="transition: opacity 1s ease 0.5s;">
+		<p>C'est là :</p>
+		<img src="map france.jpg"/>
+	</div>
+	
+	<div id="map_aveyron" class="step" data-x="4041" data-y="0" data-z="-195" data-rotate-x="-90" data-scale="0.125" 
+		style="transition: opacity 1s ease 0.5s;">
+		<div class="star" style="top:276px; left:245px"><span style="background-color:white">Capdenac-le-haut</span></div>
+		<!-- <div class="star" style="top:362px; left:326px"><span style="background-color:white">Rignac</span></div> -->
+		<div class="star" style="top:328px; left:302px"><span style="background-color:white">Montbazens</span></div>
+		<img style="box-shadow:none;" src="map aveyron.png"/>
+	</div>
+	
+<!-- 	<div id="rignac" class="step hidden" data-x="4027" data-y="0" data-z="-195" data-rotate-x="-90" data-scale="0.025">
+		<div class="star" style="left:439px; top:0px"></div>
+		<p>La mairie de Rignac.</p>
+		<img src="mairie_rignac_2.jpg"/>
+	</div> -->
+	
+	<div id="montbazens" class="step hidden" data-x="4024" data-y="0" data-z="-192" data-rotate-x="-90" data-scale="0.025">
+		<div class="star" style="left:439px; top:0px"></div>
+		<p>La mairie de Montbazens.</p>
+		<img src="mairie_montbazens.jpg"/>
+	</div>
+	
+	<div id="capdenac" class="step hidden" data-x="4018" data-y="0" data-z="-185" data-rotate-x="-90" data-scale="0.025">
+		<div class="star" style="left:400px; top:-23px"></div>
+		<p>Puis direction Capdenac-le-haut pour les festivités.</p>
+		<img src="capdenac_le_haut.jpg"/>
+		<!-- <iframe src="https://www.google.com/maps/embed?pb=!1m0!3m2!1sen!2sfr!4v1444569907878!6m8!1m7!1sgB8ldqMCd8Yvz629jqxwJg!2m2!1d44.58089755281306!2d2.069139435485409!3f77.83805622429928!4f-1.2081955930729293!5f0.7820865974627469" width="800" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> -->
+		<p>Un vin d'honneur et un diner.</p>
+	
+	</div>
+	
+	<div id="avtdernier" class="step hidden" data-x="4018" data-y="1000">
+		<p>Ca vous tente ? <sup>*</sup></p>
+		<p><span class="footnote" style="text-align:center">* et en plus vous êtes invités</span></p>
+	</div>
+
+	<div id="carton" class="step hidden" data-x="4018" data-y="2000">
+		<iframe allowtransparency="true" src="https://docs.google.com/forms/d/1BEI86yGT6j9F5UOBOMutU7lC-74dwPqbG8vMdF7ofMU/viewform?embedded=true&bc=transparent" width="760" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+		<!-- <iframe src="https://docs.google.com/forms/d/1BEI86yGT6j9F5UOBOMutU7lC-74dwPqbG8vMdF7ofMU/viewform?embedded=true" width="760" height="950" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe> -->
+	</div>
+
+	<div id="final" class="step hidden" data-x="4000" data-y="0" data-scale="10">
+		<p>A bientôt ! <i style="color:#ff5e4d" class="fa fa-heart-o"></i></p>
+	</div>
+	
+</div>
+
+<!--
+    
+    Hint is not related to impress.js in any way.
+    
+    But it can show you how to use impress.js features in creative way.
+    
+    When the presentation step is shown (selected) its element gets the class of "active" and the body element
+    gets the class based on active step id `impress-on-ID` (where ID is the step's id)... It may not be
+    so clear because of all these "ids" in previous sentence, so for example when the first step (the one with
+    the id of `bored`) is active, body element gets a class of `impress-on-bored`.
+    
+    This class is used by this hint below. Check CSS file to see how it's shown with delayed CSS animation when
+    the first step of presentation is visible for a couple of seconds.
+    
+    ...
+    
+    And when it comes to this piece of JavaScript below ... kids, don't do this at home ;)
+    It's just a quick and dirty workaround to get different hint text for touch devices.
+    In a real world it should be at least placed in separate JS file ... and the touch content should be
+    probably just hidden somewhere in HTML - not hard-coded in the script.
+    
+    Just sayin' ;)
+    
+-->
+<div class="hint">
+    <p>Utilisez la flêche <i class="fa fa-arrow-right"></i> du clavier pour continuer</p>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tappote sur la droite pour continuer</p>";
+}
+</script>
+
+<!--
+    
+    Last, but not least.
+    
+    To make all described above really work, you need to include impress.js in the page.
+    I strongly encourage to minify it first.
+    
+    In here I just include full source of the script to make it more readable.
+    
+    You also need to call a `impress().init()` function to initialize impress.js presentation.
+    And you should do it in the end of your document. Not only because it's a good practice, but also
+    because it should be done when the whole document is ready.
+    Of course you can wrap it in any kind of "DOM ready" event, but I was too lazy to do so ;)
+    
+-->
+<script src="js/impress.js"></script>
+<script></script>
+
+<!--
+    
+    The `impress()` function also gives you access to the API that controls the presentation.
+    
+    Just store the result of the call:
+    
+        var api = impress();
+    
+    and you will get three functions you can call:
+    
+        `api.init()` - initializes the presentation,
+        `api.next()` - moves to next step of the presentation,
+        `api.prev()` - moves to previous step of the presentation,
+        `api.goto( idx | id | element, [duration] )` - moves the presentation to the step given by its index number
+                id or the DOM element; second parameter can be used to define duration of the transition in ms,
+                but it's optional - if not provided default transition duration for the presentation will be used.
+    
+    You can also simply call `impress()` again to get the API, so `impress().next()` is also allowed.
+    Don't worry, it wont initialize the presentation again.
+    
+    For some example uses of this API check the last part of the source of impress.js where the API
+    is used in event handlers.
+    
+-->
+
+</body>
+</html>
+
+
