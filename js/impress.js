@@ -537,6 +537,15 @@ function detectIE() {
                 transitionDuration: duration + "ms",
                 transitionDelay: (zoomin ? 0 : delay) + "ms"
             });
+			
+			var hint = byId( "hint" );
+			css(hint, {
+                // scale the hint to prevent it from getting too much on top of the slide
+                transform: scale( windowScale * 10 ), // and scale by 10 (shh it's a hack)
+                transitionDuration: duration + "ms",
+                transitionDelay: (zoomin ? delay : 0) + "ms",
+				bottom: windowScale * 100 + "px" // also scale the position
+            });
             
             // Here is a tricky part...
             //

@@ -589,9 +589,10 @@ a:focus {
     background: rgba(0,0,0,0.5);
     color: #EEE;
     text-align: center;
-
-    font-size: 40px;
-    padding: 20px;
+	
+	/* hack: the hint is drawn 10 time smaller and scaled x10 in the javascript so that we get the gray band all the way to the sides */
+	font-size: 4px;
+    padding: 2px;
 
     z-index: 100;
 
