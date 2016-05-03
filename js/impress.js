@@ -18,6 +18,33 @@
 
 /*jshint bitwise:true, curly:true, eqeqeq:true, forin:true, latedef:true, newcap:true,
          noarg:true, noempty:true, undef:true, strict:true, browser:true */
+		 
+// code from http://codepen.io/gapcode/pen/vEJNZN
+function detectIE() {
+	var ua = window.navigator.userAgent;
+
+	var msie = ua.indexOf('MSIE ');
+	if (msie > 0) {
+	// IE 10 or older => return version number
+	return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+	}
+
+	var trident = ua.indexOf('Trident/');
+	if (trident > 0) {
+	// IE 11 => return version number
+	var rv = ua.indexOf('rv:');
+	return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+	}
+
+	var edge = ua.indexOf('Edge/');
+	if (edge > 0) {
+	// Edge (IE 12+) => return version number
+	return parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
+	}
+
+	// other browser
+	return false;
+}
 
 // You are one of those who like to know how things work inside?
 // Let me show you the cogs that make impress.js run...
@@ -181,6 +208,9 @@
                           // good enough to run impress.js properly, sorry...
                            ( ua.search(/(iphone)|(ipod)|(android)/) === -1 );
     
+	if (detectIE())
+		impressSupported = false;
+	
     if (!impressSupported) {
         // we can't be sure that `classList` is supported
         body.className += " impress-not-supported ";
@@ -199,7 +229,7 @@
     // some default config values.
     var defaults = {
         width: 1024,
-        height: 768,
+        height: 900,
         maxScale: 1,
         minScale: 0,
         
