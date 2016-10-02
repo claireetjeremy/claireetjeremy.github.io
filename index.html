@@ -39,16 +39,17 @@
 	<script src="js/js.cookie.js"></script>
 	<script>
 	$(document).ready(function(){
-		if (Cookies.get('visited') != undefined)
-		{
-			// inserer page de "menu"
-			$("#menu").css("display", "block");
-			$("#impress").prepend($("#menu"));
-		}
+		// le mariage est passe, plus besoin de ca!
+		//if (Cookies.get('visited') != undefined)
+		//{
+		//	// inserer page de "menu"
+		//	$("#menu").css("display", "block");
+		//	$("#impress").prepend($("#menu"));
+		//}
 	    
 		impress().init();
 	    
-		Cookies.set('visited', 'yes', { expires: 10 });
+		//Cookies.set('visited', 'yes', { expires: 10 });
 	}); 
 	</script>
 </head>
@@ -73,6 +74,17 @@
 </div>
 
 <div id="impress">
+
+	<div id="merci" class='step hidden' data-x='-1000' data-y='0' data-z="100">
+		<p style="font-size:larger; color:#ff5e4d"><b>Merci!</b></p>
+		
+		<img style="text-align:center" src="merci.jpg"/>
+		
+		<p style="padding-bottom:0.5em">Nous garderons un souvenir inoubliable de cette superbe journée.</p>
+		
+		<p>Les photos, <a href="https://goo.gl/photos/fdMHMspbKhMdzktT6">c'est par ici.</a></p>
+
+	</div>
 	
 	<div id="claire" class="step hidden" data-x="0" data-y="0">
 		<div class="anim" id="claireanim"></div>
